@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -6,6 +8,7 @@ using StarsGenerator;
 
 namespace StarsGeneration
 {
+    [SuppressMessage("ReSharper", "LocalizableElement")]
     public class UniverseGenerator
     {
         private static readonly Random Random = new Random();
@@ -23,20 +26,29 @@ namespace StarsGeneration
 
         public void Paint(PaintEventArgs e)
         {
+            var starPositions = GenerateStarPositions();
+            var stars = Star.GenerateStars(starPositions);
+            Console.WriteLine($"{starPositions.Count} stars generated.");
+
+            foreach (var point in starPositions)
+                Draw(e, point, Brushes.Black);
+            for (var i = 0; i < 8; ++i)
+            {
+                var randomStar = starPositions[Random.Next(starPositions.Count)];
+                Draw(e, randomStar, PickBrush());
+            }
+        }
+
+
+        private List<ValueTuple<double, double>> GenerateStarPositions()
+        {
             var generator = new PoissonGenerator();
             var points = generator
                 .GeneratePoisson(_pictureBox1.Width,
                     _pictureBox1.Height,
                     (double) _minDistance.Value,
                     (int) _newPointsCount.Value).ToList();
-
-            foreach (var point in points)
-                Draw(e, point, Brushes.Black);
-            for (var i = 0; i < 8; ++i)
-            {
-                var randomStar = points[Random.Next(points.Count)];
-                Draw(e, randomStar, PickBrush());
-            }
+            return points;
         }
 
         private static void Draw(PaintEventArgs e, ValueTuple<double, double> point, Brush color)

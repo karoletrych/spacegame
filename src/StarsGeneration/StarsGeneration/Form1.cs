@@ -1,20 +1,11 @@
 ﻿using System;
-using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
-using StarsGenerator;
 
 namespace StarsGeneration
 {
     public partial class Form1 : Form
     {
         private readonly UniverseGenerator _universeGenerator;
-
-
-        public void pictureBox1_Paint(object sender, PaintEventArgs e)
-        {
-            _universeGenerator.Paint(e);
-        }
 
         public Form1()
         {
