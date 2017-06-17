@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using static System.Math;
 
-namespace StarsGeneration
+namespace StarsGenerator
 {
-    internal class PoissonGenerator
+    public class PoissonGenerator
     {
         private readonly Random _random = new Random();
 
@@ -15,11 +14,11 @@ namespace StarsGeneration
             int newPointsCount)
         {
             //Create the grid
-            var cellSize = minDist / Sqrt(2);
+            var cellSize = minDist / Math.Sqrt(2);
 
             var grid = new Grid2D(
-                (int) Ceiling(width / cellSize),
-                (int) Ceiling(height / cellSize));
+                (int) Math.Ceiling(width / cellSize),
+                (int) Math.Ceiling(height / cellSize));
 
             //RandomQueue works like a queue, except that it
             //pops a random element from the queue instead of
@@ -83,7 +82,7 @@ namespace StarsGeneration
 
         private double Distance((double x, double y) point1, (double x, double y) point2)
         {
-            return Sqrt(Pow(point1.x - point2.x, 2) + Pow(point1.y - point2.y, 2));
+            return Math.Sqrt(Math.Pow(point1.x - point2.x, 2) + Math.Pow(point1.y - point2.y, 2));
         }
 
         private IEnumerable<(double, double)> SquareAroundPoint(Grid2D grid, (int x, int y) gridPoint,
@@ -103,10 +102,10 @@ namespace StarsGeneration
             //random radius between mindist and 2 * mindist
             var radius = minDist * (r1 + 1);
             //random angle
-            var angle = 2 * PI * r2;
+            var angle = 2 * Math.PI * r2;
             //the new point is generated around the point (x, y)
-            var newX = point.X + radius * Cos(angle);
-            var newY = point.Y + radius * Sin(angle);
+            var newX = point.X + radius * Math.Cos(angle);
+            var newY = point.Y + radius * Math.Sin(angle);
             return (newX, newY);
         }
     }

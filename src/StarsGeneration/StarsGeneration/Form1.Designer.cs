@@ -46,7 +46,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(603, 417);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
+            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(pictureBox1_Paint);
             // 
             // minDistance
             // 

@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarsGeneration", "StarsGeneration\StarsGeneration.csproj", "{E934EF2F-19B0-440C-BEF9-D32762CD3E44}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarsGenerator", "StarsGenerator\StarsGenerator.csproj", "{2B5F92B2-A71B-466C-AF12-FA34B92A8417}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{E934EF2F-19B0-440C-BEF9-D32762CD3E44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E934EF2F-19B0-440C-BEF9-D32762CD3E44}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E934EF2F-19B0-440C-BEF9-D32762CD3E44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B5F92B2-A71B-466C-AF12-FA34B92A8417}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B5F92B2-A71B-466C-AF12-FA34B92A8417}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B5F92B2-A71B-466C-AF12-FA34B92A8417}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B5F92B2-A71B-466C-AF12-FA34B92A8417}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
